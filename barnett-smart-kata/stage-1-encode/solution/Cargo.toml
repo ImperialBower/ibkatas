@@ -1,0 +1,11 @@
+[package]
+name = "encode-kata-solution"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+ark-ec.workspace = true
+ark-ff.workspace = true
+ark-pallas.workspace = true
+ark-serialize.workspace = true

@@ -1,0 +1,33 @@
+# Barnett–Smart mental-poker kata — workspace root.
+#
+# Each stage ships two member crates: an `exercise` (stubbed, tests start red)
+# and a `solution` (the real pkmental implementation, tests pass). Work a stage
+# with `cd stage-N-xxx/exercise && cargo test`; the shared target/ and lockfile
+# mean the arkworks dependencies compile once for the whole kata.
+[workspace]
+resolver = "2"
+members = [
+    "stage-1-encode/exercise",
+    "stage-1-encode/solution",
+    "stage-2-sigma/exercise",
+    "stage-2-sigma/solution",
+    "stage-3-elgamal/exercise",
+    "stage-3-elgamal/solution",
+    "stage-4-shuffle/exercise",
+    "stage-4-shuffle/solution",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+
+# Pinned once here; every member inherits with `<dep>.workspace = true`.
+[workspace.dependencies]
+ark-ec = "0.6"
+ark-ff = "0.6"
+ark-pallas = "0.6"
+ark-serialize = "0.6"
+ark-std = "0.6"
+rand = "0.8"
+sha2 = "0.10"
